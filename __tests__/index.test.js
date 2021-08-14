@@ -1,7 +1,7 @@
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { jest } from '@jest/globals';
-import { compareFiles } from '../src/index.js';
+import compareFiles from '../src/index.js';
 
 global.console = {
   log: jest.fn(),
@@ -61,6 +61,7 @@ test('gendiff', async () => {
         fee: 100500
     }
 }`;
+
   compareFiles(file1, file2);
 
   expect(global.console.log).toHaveBeenCalledWith(tryAnswer);

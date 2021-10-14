@@ -26,7 +26,6 @@ const genDiff = (filepath1, filepath2, formatType = 'stylish') => {
   const file1 = parser(filepath1);
   const file2 = parser(filepath2);
   const tree = createTree(file1, file2);
-  console.log(JSON.stringify(tree));
   return format(tree, formatType);
 };
 export default genDiff;

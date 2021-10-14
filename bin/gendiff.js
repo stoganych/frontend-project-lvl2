@@ -3,15 +3,25 @@
 import {
   Command,
 } from 'commander';
-import compareFiles from '../src/index.js';
+import genDiff from '../src/index.js';
 
 const program = new Command();
 
-program.version('0.0.1');
-program.argument('<filepath1>')
-  .argument('<filepath2>')
-  .action((path1, path2) => compareFiles(path1, path2));
-program.description('Compares two configuration files and shows a difference.');
-program.option('-f, --format [type]', 'output format');
+program
+  .version('0.0.1')
+  .description('Compares two configuration files and shows a difference.')
+  .option('-f, --format [type]', 'output format', 'stylish')
+  .arguments('<filepath1> <filepath2>')
+  .action((filepath1, filepath2) => {
+    console.log(genDiff(filepath1, filepath2, program.opts().format));
+  });
+program.parse();
 
-program.parse(process.argv);
+// program.version('0.0.1');
+// program.argument('<filepath1>')
+//   .argument('<filepath2>')
+//   .action((path1, path2) => compareFiles(path1, path2));
+// program.description('Compares two configuration files and shows a difference.');
+// program.option('-f, --format [type]', 'output format');
+
+// program.parse(process.argv);

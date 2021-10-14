@@ -16,12 +16,3 @@ program
     console.log(genDiff(filepath1, filepath2, program.opts().format));
   });
 program.parse();
-
-// program.version('0.0.1');
-// program.argument('<filepath1>')
-//   .argument('<filepath2>')
-//   .action((path1, path2) => compareFiles(path1, path2));
-// program.description('Compares two configuration files and shows a difference.');
-// program.option('-f, --format [type]', 'output format');
-
-// program.parse(process.argv);

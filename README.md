@@ -18,11 +18,13 @@ make install
 ```sh
 gendiff [pathToFile1] [pathToFile2]
 ```
+https://asciinema.org/a/qHn4jCUxQhtupqSmfuFQtEfZO
 
 ### plain file
 
 ```sh
 gendiff --format plain [pathToFile1] [pathToFile2]
 ```
+https://asciinema.org/a/4D6qCfc9quusk6aq5jODw4HnG
 
 Comparation 2 files.
